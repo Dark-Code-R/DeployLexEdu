@@ -163,7 +163,4 @@ def get_chat_response():
         return jsonify({'response': f"Error en la conexión con el servidor de Groq: {e}"}), 500
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # Crear las tablas en la base de datos
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=False)  # Asegúrate de usar host='0.0.0.0' para aceptar conexiones externas
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=False)   # Asegúrate de usar host='0.0.0.0' para aceptar conexiones externas
