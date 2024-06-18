@@ -8,15 +8,12 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia el código de la aplicación
+# Copia el código de la aplicación y el directorio legal_texts
 COPY . .
-
-# Copia el directorio legal_texts y establece los permisos
-COPY legal_texts /app/legal_texts
-RUN chmod -R 755 /app/legal_texts
+RUN chmod -R 755 /legal_texts
 
 # Lista los archivos para verificar
-RUN ls -la /app/legal_texts
+RUN ls -la /legal_texts
 
 # Expone el puerto en el que corre la aplicación
 EXPOSE 5000
