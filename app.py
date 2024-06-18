@@ -34,6 +34,7 @@ GROQ_MODEL_ID = 'mixtral-8x7b-32768'
 
 # Cargar información legal
 def load_legal_info(directory='legal_texts'):
+    print(f"Loading legal info from: {os.path.abspath(directory)}")
     legal_info = ""
     for filename in os.listdir(directory):
         if filename.endswith('.txt') and 'Diccionario' not in filename:
@@ -45,6 +46,7 @@ legal_info = load_legal_info()
 
 terminos_juridicos = {}
 def load_terminos_juridicos(directory='legal_texts'):
+    print(f"Loading terms from: {os.path.abspath(directory)}")
     for filename in os.listdir(directory):
         if filename.startswith('Diccionario') and filename.endswith('.txt'):
             with open(os.path.join(directory, filename), 'r', encoding='utf-8') as file:

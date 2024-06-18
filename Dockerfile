@@ -6,11 +6,13 @@ WORKDIR /app
 
 # Copia los archivos de requerimientos y los instala
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia el código de la aplicación y el directorio legal_texts
+# Copia el código de la aplicación
 COPY . .
-COPY legal_texts/ /app/legal_texts/
+
+# Copia el directorio legal_texts y establece los permisos
+COPY legal_texts /app/legal_texts
 RUN chmod -R 755 /app/legal_texts
 
 # Expone el puerto en el que corre la aplicación
