@@ -14,5 +14,5 @@ COPY . .
 # Expone el puerto en el que corre la aplicación
 EXPOSE 5000
 
-# Define el comando de ejecución de la aplicación
-CMD ["python", "app.py"]
+# Define el comando de ejecución de la aplicación usando Gunicorn
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:$PORT"]
