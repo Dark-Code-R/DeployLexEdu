@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # Define el comando de ejecución de la aplicación
-CMD ["python", "app.py"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:$PORT"]

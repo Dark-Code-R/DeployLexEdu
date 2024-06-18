@@ -163,4 +163,5 @@ def get_chat_response():
         return jsonify({'response': f"Error en la conexión con el servidor de Groq: {e}"}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=False)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
