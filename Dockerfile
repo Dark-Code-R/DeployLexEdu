@@ -8,8 +8,9 @@ WORKDIR /app
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-# Copia el código de la aplicación y ajusta permisos para el directorio de textos legales
+# Copia el código de la aplicación y el directorio legal_texts
 COPY . .
+COPY legal_texts/ /app/legal_texts/
 RUN chmod -R 755 /app/legal_texts
 
 # Expone el puerto en el que corre la aplicación
