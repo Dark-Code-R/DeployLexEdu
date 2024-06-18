@@ -15,6 +15,9 @@ COPY . .
 COPY legal_texts /app/legal_texts
 RUN chmod -R 755 /app/legal_texts
 
+# Lista los archivos para verificar
+RUN ls -la /app/legal_texts
+
 # Expone el puerto en el que corre la aplicación
 EXPOSE 5000
 
