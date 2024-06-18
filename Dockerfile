@@ -14,7 +14,18 @@ RUN chmod -R 755 /app/legal_texts
 
 # Lista los archivos para verificar
 RUN ls -la /app/legal_texts
+
+# Verifica el contenido de cada archivo
 RUN cat /app/legal_texts/CódigodelasFamiliasydelProcesoFamiliar.txt
+RUN cat /app/legal_texts/DerechodelasFamiliasViolenciaFamiliar.txt
+RUN cat /app/legal_texts/DiccionarioElConceptoDelDerecho.txt
+RUN cat /app/legal_texts/DiccionarioJurídicoBoliviano.txt
+RUN cat /app/legal_texts/DiccionarioJurídicoBoliviaLex.txt
+RUN cat /app/legal_texts/DiccionarioLaGuardaCompartidaenlaLegislaciónBolivia.txt
+RUN cat /app/legal_texts/Diccionariojurídicoelementa.txt
+RUN cat /app/legal_texts/ElDerechodeFamiliaenBolivia.txt
+RUN cat /app/legal_texts/Eldivorcioylasacóndesvinculatoria.txt
+RUN cat /app/legal_texts/LaAsistenciaFamiliar.txt
 
 # Expone el puerto en el que corre la aplicación
 EXPOSE 5000
