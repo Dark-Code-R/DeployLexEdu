@@ -2,8 +2,9 @@ import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import requests
 import uuid
-from groq import Groq
+from groq import Groq  # Importa la biblioteca Groq
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
